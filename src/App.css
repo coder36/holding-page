@@ -1,0 +1,17 @@
+
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;  
+  align-items: center;
+  height: 100vh;
+}
+.logo {
+  background: url(./images/agco.png) no-repeat;
+  background-size: contain;
+  height: 300px;
+  width: 300px;
+
+
+}
