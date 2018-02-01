@@ -31,7 +31,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:coder36/holding-page.git',
       path : '/home/mark/app',
-      'post-deploy' : 'yarn install && pm2 startOrRestart ecosystem.json --env production'
+      'post-deploy' : 'yarn install && pm2 startOrRestart ecosystem.config.json --env production'
     },
   }
 };
