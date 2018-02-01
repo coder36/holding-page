@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
+import config from './config'
 
 class App extends Component {
   render() {
-    
+
     return (
-      
-        <div className="flex-container">
-            <h2 style={{textAlign: "center"}} >We're making some improvements.  Please try again in a few minutes</h2>          
-        </div>
-      
+
+        <span className="flex-container">
+            <h2 style={{textAlign: "center"}} >We're making some improvements.  Please try again in a few minutes</h2>
+            <span>{config.server_id}</span>
+        </span>
+
     )
   }
 }
