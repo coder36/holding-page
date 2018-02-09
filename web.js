@@ -22,12 +22,6 @@ async function index_html() {
 
 
 
-app.get('/', async (req, res) => {
-    res.type('text/html; charset=UTF-8');
-    res.send( await index_html() )
-})
-
-
 app.use('/static', express.static('build/static', {maxAge: 60 * 60 * 24 * 10}))
 app.use('/images', express.static('build/images', {maxAge: 60 * 60 * 24 * 10}))
 app.get('/*', async (req, res) => {
