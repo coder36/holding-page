@@ -20,13 +20,14 @@ async function index_html() {
     }, 360000)
 }
 
+
+
+app.use('/static', express.static('build/static', {maxAge: 60 * 60 * 24 * 10}))
+
 app.get('/', async (req, res) => {
     res.type('text/html; charset=UTF-8');
     res.send( await index_html() )
 })
-
-
-app.use('/static', express.static('build/static', {maxAge: 60 * 60 * 24 * 10}))
 
 app.get('/*', async (req, res) => {
     res.type('text/html; charset=UTF-8');
