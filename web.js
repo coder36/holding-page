@@ -10,10 +10,10 @@ app.use(helmet())
 
 async function index_html() {
     const conf = {
-        server_id: config.server_id
+        server_id: config.server_id,
+        build_hash: process.env.BUILD_HASH,
+        build_timestamp: process.env.BUILD_TIMESTAMP
     }
-
-    console.log("aa", conf)
 
     return await cached( "index.html", async () => {
         return fs.readFileSync(path.resolve(__dirname, 'build/index.html'), "utf8" ).replace("window.CONFIG={}", `window.CONFIG=${JSON.stringify(conf)}` )
