@@ -20,12 +20,13 @@ async function index_html() {
     }, 360000)
 }
 
+app.use(express.static(path.join(__dirname, 'build')));
+
 app.get('/', async (req, res) => {
     res.type('text/html; charset=UTF-8');
     res.send( await index_html() )
 })
 
-app.use(express.static(path.join(__dirname, 'build')));
 
 async function cached(key, func, timeout_in_seconds = config.site_cache,  timeout_callback=undefined) {
     return cache.get(key) || cache.put( key, await func(), timeout_in_seconds * 1000,  timeout_callback )
